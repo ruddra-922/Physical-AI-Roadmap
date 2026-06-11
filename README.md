@@ -6,8 +6,54 @@ A community-focused index for **Physical AI**, built to help researchers, builde
 
 ---
 
+<a id="why-this-roadmap"></a>
+
+## Why This Roadmap Exists
+
+Physical AI can feel difficult to enter because the field mixes robotics, vision-language models, control policies, simulation, reinforcement learning, and hardware deployment. This roadmap organizes the field into smaller learning blocks so students and early builders can move from basic concepts to advanced papers without getting lost.
+
+Instead of treating this as a ranking, use it as a study map. Start with the concepts, follow the beginner path, then go deeper into the sections that match your interests.
+
+<a id="how-to-use-this-roadmap"></a>
+
+## How To Use This Roadmap
+
+- **New to the field:** start with the Beginner Learning Path, then read the Foundations and Surveys sections.
+- **Building projects:** use Datasets & Benchmarks, Simulation Platforms, and Deployment to find practical tools.
+- **Reading papers:** use each section description to understand why a paper belongs there before opening the full paper.
+- **Comparing methods:** follow the structure from VLA Architectures to Action Representation, then World Models and Planning.
+
+<a id="beginner-learning-path"></a>
+
+## Beginner Learning Path
+
+| Step | Learn This First | Why It Matters | Start Here |
+|------|------------------|----------------|------------|
+| 1 | Vision-language models | They connect images, text, and semantic understanding | [Vision-Language Backbones](#vision-language-backbones) |
+| 2 | Robot visual representations | Robots need reliable perception before they can act | [Visual Representations](#visual-representations) |
+| 3 | VLA models | These connect perception, language, and actions in one policy | [End-to-End VLAs](#end-to-end-vlas) |
+| 4 | Action representations | The same task can be represented as tokens, trajectories, or continuous controls | [Action Representation](#action-representation) |
+| 5 | World models | Robots need to predict what may happen after an action | [World Models](#world-models) |
+| 6 | Benchmarks and simulators | Students need reproducible environments before real hardware | [Resources](#resources) |
+
+<a id="reading-guide"></a>
+
+## Reading Guide
+
+- **Paper:** best for understanding the research idea and method.
+- **Project:** best for demos, diagrams, videos, and quick intuition.
+- **Code:** best when you want to reproduce or build on the method.
+- **Dataset or benchmark:** best for experiments, comparisons, and student projects.
+- **Survey:** best when you want a broad overview before reading individual papers.
+
+---
+
 ## Table of Contents
 
+- [Why This Roadmap Exists](#why-this-roadmap)
+- [How To Use This Roadmap](#how-to-use-this-roadmap)
+- [Beginner Learning Path](#beginner-learning-path)
+- [Reading Guide](#reading-guide)
 - [Foundations](#foundations)
   - [Vision-Language Backbones](#vision-language-backbones)
   - [Visual Representations](#visual-representations)
@@ -131,9 +177,9 @@ A community-focused index for **Physical AI**, built to help researchers, builde
 
 - **RoboVLMs**: "Towards Generalist Robot Policies: What Matters in Building Vision-Language-Action Models", *arXiv, Dec 2024*. [[Paper](https://arxiv.org/abs/2412.14058)] [[Project](https://robovlms.github.io/)]
 
-- **Ï€0.5**: "Ï€0.5: A Vision-Language-Action Model with Open-World Generalization", *Physical Intelligence, Apr 2025*. [[Paper](https://arxiv.org/abs/2504.16054)] [[Project](https://www.pi.website/blog/pi05)] [[Code](https://github.com/Physical-Intelligence/openpi)]
+- **π0.5**: "π0.5: A Vision-Language-Action Model with Open-World Generalization", *Physical Intelligence, Apr 2025*. [[Paper](https://arxiv.org/abs/2504.16054)] [[Project](https://www.pi.website/blog/pi05)] [[Code](https://github.com/Physical-Intelligence/openpi)]
 
-- **Ï€0.6**: "Ï€0.6: A VLA that Learns from Experience", *Physical Intelligence, 2025*. [[Blog](https://www.physicalintelligence.company/blog/pistar06)]
+- **π0.6**: "π0.6: A VLA that Learns from Experience", *Physical Intelligence, 2025*. [[Blog](https://www.physicalintelligence.company/blog/pistar06)]
 
 - **GR-3**: "GR-3 Technical Report", *ByteDance Seed, Jul 2025*. [[Paper](https://arxiv.org/abs/2507.15493)] [[Project](https://seed.bytedance.com/GR3)]
 
@@ -340,10 +386,10 @@ A community-focused index for **Physical AI**, built to help researchers, builde
 
 > Continuous-control policies that produce trajectories with diffusion, flow matching, or related generative objectives.
 
-- **Ï€â‚€ (pi-zero)**: "Ï€â‚€: A Vision-Language-Action Flow Model for General Robot Control", *arXiv, Oct 2024*. [[Paper](https://arxiv.org/abs/2410.24164)] [[Project](https://www.physicalintelligence.company/blog/pi0)]
+- **π₀ (pi-zero)**: "π₀: A Vision-Language-Action Flow Model for General Robot Control", *arXiv, Oct 2024*. [[Paper](https://arxiv.org/abs/2410.24164)] [[Project](https://www.physicalintelligence.company/blog/pi0)]
   - Uses flow matching to generate high-frequency (50 Hz) continuous actions for dexterous tasks.
 
-- **Ï€â‚€.5**: "Ï€â‚€.5: Scaling Robot Foundation Models", *arXiv, Apr 2025*. [[Paper](https://www.physicalintelligence.company/blog/pi0-5)]
+- **π₀.5**: "π₀.5: Scaling Robot Foundation Models", *arXiv, Apr 2025*. [[Paper](https://www.physicalintelligence.company/blog/pi0-5)]
 
 - **Octo**: "Octo: An Open-Source Generalist Robot Policy", *RSS 2024*. [[Paper](https://arxiv.org/abs/2405.12213)] [[Project](https://octo-models.github.io/)] [[Code](https://github.com/octo-models/octo)]
 
@@ -678,7 +724,7 @@ A community-focused index for **Physical AI**, built to help researchers, builde
   - **TL;DR**: Residual RL method collecting data with frozen VLA and small residual policy. Residual interventions provide high-quality data with recovery behavior. Finally finetunes VLA using SFT. Achieves 99% on LIBERO.
 
 - **STA-PPO/TPO**: "Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models", *ICLR 2026 Submission*.
-  - **TL;DR**: Breaks robot tasks into semantic stages (Reachâ†’Graspâ†’Transportâ†’Place) and assigns rewards to each stage instead of whole trajectory. Uses STA-TPO for offline preference learning and STA-PPO for online RL, both at stage level. Achieves 98% on Bridge SIMPLER.
+  - **TL;DR**: Breaks robot tasks into semantic stages (Reach→Grasp→Transport→Place) and assigns rewards to each stage instead of whole trajectory. Uses STA-TPO for offline preference learning and STA-PPO for online RL, both at stage level. Achieves 98% on Bridge SIMPLER.
 
 - **Verifier-free Test-Time Sampling**: "Verifier-free Test-Time Sampling for Vision Language Action Models", *arXiv, Oct 2025*. [[Paper](https://arxiv.org/abs/2510.05681)]
 
@@ -1148,37 +1194,37 @@ A community-focused index for **Physical AI**, built to help researchers, builde
 
 | Dataset | Scale | Focus | Links |
 |---------|-------|-------|-------|
-| Open X-Embodiment | 1M+ trajectories, 22 robots | Cross-embodiment | [Paper](https://arxiv.org/abs/2310.08864) Â· [Project](https://robotics-transformer-x.github.io/) |
-| DROID | 76K trajectories, 564 scenes | In-the-wild manipulation | [Paper](https://arxiv.org/abs/2403.12945) Â· [Project](https://droid-dataset.github.io/) |
-| BridgeData V2 | Multi-task | Few-shot transfer | [Paper](https://arxiv.org/abs/2308.12952) Â· [Project](https://rail-berkeley.github.io/bridgedata/) |
-| ARIO | Unified format | Dataset standardization | [Paper](https://arxiv.org/abs/2408.10899) Â· [Project](https://imaei.github.io/project_pages/ario/) |
-| LIBERO | 130 tasks | Lifelong learning | [Paper](https://arxiv.org/abs/2306.03310) Â· [Project](https://libero-project.github.io/) |
-| RoboMIND | Multi-embodiment | Intelligence benchmark | [Paper](https://arxiv.org/abs/2412.13877) Â· [Project](https://x-humanoid-robomind.github.io/) |
-| VLABench | Long-horizon | Reasoning benchmark | [Paper](https://arxiv.org/abs/2412.18194) Â· [Project](https://vlabench.github.io/) |
-| SIMPLER | Sim-to-real | Policy evaluation | [Paper](https://arxiv.org/abs/2405.05941) Â· [Project](https://simpler-env.github.io/) |
-| RoboCasa | Large-scale | Household tasks | [Paper](https://arxiv.org/abs/2407.10943) Â· [Project](https://robocasa.ai/) |
-| CALVIN | Long-horizon | Language-conditioned | [Paper](https://arxiv.org/abs/2112.03227) Â· [Project](http://calvin.cs.uni-freiburg.de/) |
-| RLBench | 100 tasks | Manipulation benchmark | [Paper](https://arxiv.org/abs/1909.12271) Â· [Project](https://sites.google.com/view/rlbench) |
-| ARNOLD | Realistic 3D | Language-grounded | [Paper](https://arxiv.org/abs/2304.04321) Â· [Project](https://arnold-benchmark.github.io/) |
-| ALFRED | VLN + manipulation | Instruction following | [Paper](https://arxiv.org/abs/1912.01734) Â· [Project](https://askforalfred.com/) |
-| GenSim / GenSim2 | Procedural | Task generation | [Paper](https://arxiv.org/abs/2310.01361) Â· [Project](https://gen-sim.github.io/) |
-| MineDojo | Minecraft | Open-world learning | [Paper](https://arxiv.org/abs/2206.08853) Â· [Project](https://minedojo.org/) |
-| RoboTwin 2.0 | Bimanual manipulation | Domain randomization | [Paper](https://arxiv.org/abs/2506.18088) Â· [Project](https://robotwin-platform.github.io/) |
-| RoboArena | Distributed evaluation | Real-world benchmark | [Paper](https://arxiv.org/abs/2506.18123) Â· [Project](https://robo-arena.github.io/) |
-| RoboCerebra | Long-horizon | Manipulation evaluation | [Paper](https://arxiv.org/abs/2506.06677) Â· [Project](https://robocerebra.github.io/) |
-| DivScene | Diverse scenes | Object navigation | [Paper](https://arxiv.org/abs/2410.02730) Â· [Project](https://zhaowei-wang-nlp.github.io/divscene-project-page/) |
-| EWMBench | World model evaluation | Scene, motion, semantic | [Paper](https://arxiv.org/abs/2505.09694) Â· [Code](https://github.com/AgibotTech/EWMBench) |
-| ManipBench | VLM evaluation | Low-level manipulation | [Paper](https://arxiv.org/abs/2505.09698) Â· [Project](https://manipbench.github.io/) |
-| RoboTwin | CVPR 2025 | Dual-arm benchmark | [Paper](https://arxiv.org/abs/2409.02920) Â· [Code](https://github.com/TianxingChen/RoboTwin) |
-| RoboVerse | Unified platform | Scalable robot learning | [Paper](https://roboverseorg.github.io/static/pdfs/paper_supp_20250405_1820.pdf) Â· [Code](https://github.com/RoboVerseOrg/RoboVerse) |
-| AutoEval | Autonomous evaluation | Real-world manipulation | [Paper](https://arxiv.org/abs/2503.24278) Â· [Project](https://auto-eval.github.io/) |
-| RoboFactory | Multi-robot collaboration | Compositional tasks | [Paper](https://arxiv.org/abs/2503.16408) Â· [Project](https://iranqin.github.io/robofactory/) |
+| Open X-Embodiment | 1M+ trajectories, 22 robots | Cross-embodiment | [Paper](https://arxiv.org/abs/2310.08864) · [Project](https://robotics-transformer-x.github.io/) |
+| DROID | 76K trajectories, 564 scenes | In-the-wild manipulation | [Paper](https://arxiv.org/abs/2403.12945) · [Project](https://droid-dataset.github.io/) |
+| BridgeData V2 | Multi-task | Few-shot transfer | [Paper](https://arxiv.org/abs/2308.12952) · [Project](https://rail-berkeley.github.io/bridgedata/) |
+| ARIO | Unified format | Dataset standardization | [Paper](https://arxiv.org/abs/2408.10899) · [Project](https://imaei.github.io/project_pages/ario/) |
+| LIBERO | 130 tasks | Lifelong learning | [Paper](https://arxiv.org/abs/2306.03310) · [Project](https://libero-project.github.io/) |
+| RoboMIND | Multi-embodiment | Intelligence benchmark | [Paper](https://arxiv.org/abs/2412.13877) · [Project](https://x-humanoid-robomind.github.io/) |
+| VLABench | Long-horizon | Reasoning benchmark | [Paper](https://arxiv.org/abs/2412.18194) · [Project](https://vlabench.github.io/) |
+| SIMPLER | Sim-to-real | Policy evaluation | [Paper](https://arxiv.org/abs/2405.05941) · [Project](https://simpler-env.github.io/) |
+| RoboCasa | Large-scale | Household tasks | [Paper](https://arxiv.org/abs/2407.10943) · [Project](https://robocasa.ai/) |
+| CALVIN | Long-horizon | Language-conditioned | [Paper](https://arxiv.org/abs/2112.03227) · [Project](http://calvin.cs.uni-freiburg.de/) |
+| RLBench | 100 tasks | Manipulation benchmark | [Paper](https://arxiv.org/abs/1909.12271) · [Project](https://sites.google.com/view/rlbench) |
+| ARNOLD | Realistic 3D | Language-grounded | [Paper](https://arxiv.org/abs/2304.04321) · [Project](https://arnold-benchmark.github.io/) |
+| ALFRED | VLN + manipulation | Instruction following | [Paper](https://arxiv.org/abs/1912.01734) · [Project](https://askforalfred.com/) |
+| GenSim / GenSim2 | Procedural | Task generation | [Paper](https://arxiv.org/abs/2310.01361) · [Project](https://gen-sim.github.io/) |
+| MineDojo | Minecraft | Open-world learning | [Paper](https://arxiv.org/abs/2206.08853) · [Project](https://minedojo.org/) |
+| RoboTwin 2.0 | Bimanual manipulation | Domain randomization | [Paper](https://arxiv.org/abs/2506.18088) · [Project](https://robotwin-platform.github.io/) |
+| RoboArena | Distributed evaluation | Real-world benchmark | [Paper](https://arxiv.org/abs/2506.18123) · [Project](https://robo-arena.github.io/) |
+| RoboCerebra | Long-horizon | Manipulation evaluation | [Paper](https://arxiv.org/abs/2506.06677) · [Project](https://robocerebra.github.io/) |
+| DivScene | Diverse scenes | Object navigation | [Paper](https://arxiv.org/abs/2410.02730) · [Project](https://zhaowei-wang-nlp.github.io/divscene-project-page/) |
+| EWMBench | World model evaluation | Scene, motion, semantic | [Paper](https://arxiv.org/abs/2505.09694) · [Code](https://github.com/AgibotTech/EWMBench) |
+| ManipBench | VLM evaluation | Low-level manipulation | [Paper](https://arxiv.org/abs/2505.09698) · [Project](https://manipbench.github.io/) |
+| RoboTwin | CVPR 2025 | Dual-arm benchmark | [Paper](https://arxiv.org/abs/2409.02920) · [Code](https://github.com/TianxingChen/RoboTwin) |
+| RoboVerse | Unified platform | Scalable robot learning | [Paper](https://roboverseorg.github.io/static/pdfs/paper_supp_20250405_1820.pdf) · [Code](https://github.com/RoboVerseOrg/RoboVerse) |
+| AutoEval | Autonomous evaluation | Real-world manipulation | [Paper](https://arxiv.org/abs/2503.24278) · [Project](https://auto-eval.github.io/) |
+| RoboFactory | Multi-robot collaboration | Compositional tasks | [Paper](https://arxiv.org/abs/2503.16408) · [Project](https://iranqin.github.io/robofactory/) |
 | BOSS | Observation shift | Long-horizon tasks | [Paper](https://arxiv.org/abs/2502.15679) |
 | OpenBench | Smart logistics | Semantic navigation | [Paper](https://arxiv.org/abs/2502.09238) |
 | EmbSpatial-Bench | Spatial understanding | Embodied tasks | [Paper](https://arxiv.org/abs/2406.05756) |
 | Diverse Behaviors Benchmark | Human demonstrations | Imitation learning | [Paper](https://arxiv.org/abs/2402.14606) |
 | RoboArena | Zero-shot evaluation | Real-world generalization | [Project](https://robo-arena.github.io/) |
-| RobotArena âˆž | Real-to-sim | Automatic evaluation | ICLR 2026 Submission |
+| RobotArena ∞ | Real-to-sim | Automatic evaluation | ICLR 2026 Submission |
 | RoboCasa365 | 365 tasks, 2k+ scenes | Kitchen manipulation | ICLR 2026 Submission |
 | WorldGym | World model evaluation | Policy evaluation | ICLR 2026 Submission |
 | ManipulationNet | Zero-shot benchmark | Fair comparison | [Project](https://manipulation-net.github.io/) |
@@ -1189,20 +1235,20 @@ A community-focused index for **Physical AI**, built to help researchers, builde
 
 | Platform | Focus | Links |
 |----------|-------|-------|
-| ManiSkill3 | GPU-parallelized robotics | [Paper](https://arxiv.org/abs/2410.00425) Â· [Project](https://www.maniskill.ai/) |
+| ManiSkill3 | GPU-parallelized robotics | [Paper](https://arxiv.org/abs/2410.00425) · [Project](https://www.maniskill.ai/) |
 | Genesis | Differentiable physics | [Project](https://genesis-embodied-ai.github.io/) |
 | Isaac Lab / Isaac Sim | NVIDIA robotics simulation | [Project](https://developer.nvidia.com/isaac-sim) |
-| MuJoCo Playground | Browser-based MuJoCo | [Paper](https://arxiv.org/abs/2502.08844) Â· [Project](https://playground.mujoco.org/) |
-| OmniGibson | High-fidelity home simulation | [Paper](https://arxiv.org/abs/2311.01014) Â· [Project](https://behavior.stanford.edu/omnigibson/) |
-| Habitat 2.0 | Navigation & rearrangement | [Paper](https://arxiv.org/abs/2106.14405) Â· [Project](https://aihabitat.org/) |
-| BEHAVIOR-1K | 1,000 everyday activities | [Paper](https://arxiv.org/abs/2403.09227) Â· [Project](https://behavior.stanford.edu/) |
-| iGibson | Interactive environments | [Paper](https://arxiv.org/abs/2012.02924) Â· [Project](https://svl.stanford.edu/igibson/) |
-| RoboSuite | Modular manipulation | [Paper](https://arxiv.org/abs/2009.12293) Â· [Project](https://robosuite.ai/) |
+| MuJoCo Playground | Browser-based MuJoCo | [Paper](https://arxiv.org/abs/2502.08844) · [Project](https://playground.mujoco.org/) |
+| OmniGibson | High-fidelity home simulation | [Paper](https://arxiv.org/abs/2311.01014) · [Project](https://behavior.stanford.edu/omnigibson/) |
+| Habitat 2.0 | Navigation & rearrangement | [Paper](https://arxiv.org/abs/2106.14405) · [Project](https://aihabitat.org/) |
+| BEHAVIOR-1K | 1,000 everyday activities | [Paper](https://arxiv.org/abs/2403.09227) · [Project](https://behavior.stanford.edu/) |
+| iGibson | Interactive environments | [Paper](https://arxiv.org/abs/2012.02924) · [Project](https://svl.stanford.edu/igibson/) |
+| RoboSuite | Modular manipulation | [Paper](https://arxiv.org/abs/2009.12293) · [Project](https://robosuite.ai/) |
 | PyBullet | Lightweight physics for RL | [Project](https://pybullet.org/) |
-| DexGarmentLab | Garment manipulation | [Paper](https://arxiv.org/abs/2505.11032) Â· [Project](https://wayrise.github.io/DexGarmentLab/) |
-| MuBlE | Task planning benchmark | [Paper](https://arxiv.org/abs/2503.02834) Â· [Code](https://github.com/michaal94/MuBlE) |
-| LocoMuJoCo | Locomotion benchmark | [Docs](https://loco-mujoco.readthedocs.io/) Â· [Code](https://github.com/robfiras/loco-mujoco) |
-| BEHAVIOR Robot Suite | Whole-body manipulation | [Paper](https://arxiv.org/abs/2503.05652) Â· [Project](https://behavior-robot-suite.github.io/) |
+| DexGarmentLab | Garment manipulation | [Paper](https://arxiv.org/abs/2505.11032) · [Project](https://wayrise.github.io/DexGarmentLab/) |
+| MuBlE | Task planning benchmark | [Paper](https://arxiv.org/abs/2503.02834) · [Code](https://github.com/michaal94/MuBlE) |
+| LocoMuJoCo | Locomotion benchmark | [Docs](https://loco-mujoco.readthedocs.io/) · [Code](https://github.com/robfiras/loco-mujoco) |
+| BEHAVIOR Robot Suite | Whole-body manipulation | [Paper](https://arxiv.org/abs/2503.05652) · [Project](https://behavior-robot-suite.github.io/) |
 
 ---
 
@@ -1214,35 +1260,35 @@ A community-focused index for **Physical AI**, built to help researchers, builde
 
 | Company | Focus | Key Products | Links |
 |---------|-------|--------------|-------|
-| Physical Intelligence (Ï€) | General-purpose robot foundation models | Ï€â‚€, Ï€â‚€.5, Ï€â‚€.6, FAST | [Web](https://www.pi.website/) Â· [Blog](https://www.pi.website/) |
-| Google DeepMind | Robotics research | RT-1/2, Gemini Robotics, Genie, PaLM-E | [Web](https://deepmind.google/) Â· [Blog](https://deepmind.google/discover/blog/) |
-| OpenAI | AI research | CLIP, GPT-4V, Sora | [Web](https://openai.com/) Â· [Blog](https://openai.com/blog/) |
-| Meta AI (FAIR) | JEPA, embodied AI | I-JEPA, V-JEPA, R3M, DINOv2, SAM | [Web](https://ai.meta.com/) Â· [Blog](https://ai.meta.com/blog/) |
+| Physical Intelligence (π) | General-purpose robot foundation models | π₀, π₀.5, π₀.6, FAST | [Web](https://www.pi.website/) · [Blog](https://www.pi.website/) |
+| Google DeepMind | Robotics research | RT-1/2, Gemini Robotics, Genie, PaLM-E | [Web](https://deepmind.google/) · [Blog](https://deepmind.google/discover/blog/) |
+| OpenAI | AI research | CLIP, GPT-4V, Sora | [Web](https://openai.com/) · [Blog](https://openai.com/blog/) |
+| Meta AI (FAIR) | JEPA, embodied AI | I-JEPA, V-JEPA, R3M, DINOv2, SAM | [Web](https://ai.meta.com/) · [Blog](https://ai.meta.com/blog/) |
 | World Labs | Spatial intelligence & world models | Marble, RTFM | [Web](https://www.worldlabs.ai/) |
-| NVIDIA | Simulation & foundation models | GR00T, Isaac Sim, Cosmos | [Web](https://developer.nvidia.com/isaac) Â· [Blog](https://developer.nvidia.com/blog/) |
-| Microsoft Research | Multimodal agents | Magma | [Web](https://www.microsoft.com/en-us/research/) Â· [Blog](https://www.microsoft.com/en-us/research/blog/) |
-| Hugging Face | Open-source VLAs | LeRobot, SmolVLA | [Web](https://huggingface.co/) Â· [Blog](https://huggingface.co/blog) |
+| NVIDIA | Simulation & foundation models | GR00T, Isaac Sim, Cosmos | [Web](https://developer.nvidia.com/isaac) · [Blog](https://developer.nvidia.com/blog/) |
+| Microsoft Research | Multimodal agents | Magma | [Web](https://www.microsoft.com/en-us/research/) · [Blog](https://www.microsoft.com/en-us/research/blog/) |
+| Hugging Face | Open-source VLAs | LeRobot, SmolVLA | [Web](https://huggingface.co/) · [Blog](https://huggingface.co/blog) |
 | ByteDance | Vision-language-action models | GR-1, GR-2, CogACT | [Web](https://www.bytedance.com/) |
 | Shanghai AI Lab | Embodied AI research | LEO, InternVL | [Web](https://www.shlab.org.cn/) |
-| Covariant | Industrial robotics AI | RFM-1 | [Web](https://covariant.ai/) Â· [Blog](https://covariant.ai/insights/) |
+| Covariant | Industrial robotics AI | RFM-1 | [Web](https://covariant.ai/) · [Blog](https://covariant.ai/insights/) |
 | Skild AI | General-purpose robot brain | Skild Brain | [Web](https://www.skild.ai/) |
-| RLWRLD | Industrial robotics foundation models | RFM | [Web](https://www.rlwrld.ai/) Â· [Blog](https://www.rlwrld.ai/blog) |
-| Intrinsic (Alphabet) | Industrial robotics software | Flowstate | [Web](https://intrinsic.ai/) Â· [Blog](https://intrinsic.ai/blog) |
-| Wayve | Embodied AI for driving | GAIA-1, LINGO | [Web](https://wayve.ai/) Â· [Blog](https://wayve.ai/thinking/) |
+| RLWRLD | Industrial robotics foundation models | RFM | [Web](https://www.rlwrld.ai/) · [Blog](https://www.rlwrld.ai/blog) |
+| Intrinsic (Alphabet) | Industrial robotics software | Flowstate | [Web](https://intrinsic.ai/) · [Blog](https://intrinsic.ai/blog) |
+| Wayve | Embodied AI for driving | GAIA-1, LINGO | [Web](https://wayve.ai/) · [Blog](https://wayve.ai/thinking/) |
 | Cortex AI | Real-world data for embodied AI | Egocentric + robot datasets | [Web](https://cortexrobot.ai/) |
 | Verne Robotics | Mobile manipulation | Nemo | [Web](https://www.vernerobotics.com/) |
 | Figure AI | Humanoid robots | Figure 01, Figure 02 | [Web](https://www.figure.ai/) |
-| 1X Technologies | Humanoid robots | NEO, EVE | [Web](https://www.1x.tech/) Â· [Blog](https://www.1x.tech/discover) |
-| Boston Dynamics | Advanced robotics | Atlas, Spot, Stretch | [Web](https://bostondynamics.com/) Â· [Blog](https://bostondynamics.com/blog/) |
+| 1X Technologies | Humanoid robots | NEO, EVE | [Web](https://www.1x.tech/) · [Blog](https://www.1x.tech/discover) |
+| Boston Dynamics | Advanced robotics | Atlas, Spot, Stretch | [Web](https://bostondynamics.com/) · [Blog](https://bostondynamics.com/blog/) |
 | Tesla | Humanoid robots | Optimus | [Web](https://www.tesla.com/optimus) |
-| Agility Robotics | Bipedal robots | Digit | [Web](https://agilityrobotics.com/) Â· [Blog](https://agilityrobotics.com/blog) |
+| Agility Robotics | Bipedal robots | Digit | [Web](https://agilityrobotics.com/) · [Blog](https://agilityrobotics.com/blog) |
 | Unitree | Quadruped & humanoid robots | H1, G1, Go2 | [Web](https://www.unitree.com/) |
-| Sanctuary AI | Humanoid robots | Phoenix | [Web](https://sanctuary.ai/) Â· [Blog](https://sanctuary.ai/resources/) |
+| Sanctuary AI | Humanoid robots | Phoenix | [Web](https://sanctuary.ai/) · [Blog](https://sanctuary.ai/resources/) |
 | Apptronik | Humanoid robots | Apollo | [Web](https://apptronik.com/) |
 | Fourier Intelligence | Humanoid & rehab robots | GR-1, GR-2 | [Web](https://www.fftai.com/) |
-| Hello Robot | Mobile manipulation | Stretch | [Web](https://hello-robot.com/) Â· [Blog](https://hello-robot.com/blog) |
+| Hello Robot | Mobile manipulation | Stretch | [Web](https://hello-robot.com/) · [Blog](https://hello-robot.com/blog) |
 | Franka Robotics | Research robot arms | Panda | [Web](https://franka.de/) |
-| Universal Robots | Collaborative robot arms | UR3, UR5, UR10 | [Web](https://www.universal-robots.com/) Â· [Blog](https://www.universal-robots.com/blog/) |
+| Universal Robots | Collaborative robot arms | UR3, UR5, UR10 | [Web](https://www.universal-robots.com/) · [Blog](https://www.universal-robots.com/blog/) |
 | UFACTORY | Affordable robot arms | xArm | [Web](https://www.ufactory.cc/) |
 | Trossen Robotics | Research platforms | ViperX, WidowX, ALOHA | [Web](https://www.trossenrobotics.com/) |
 | Flexiv | Adaptive robot arms | Rizon | [Web](https://www.flexiv.com/) |
@@ -1255,7 +1301,7 @@ A community-focused index for **Physical AI**, built to help researchers, builde
 | Stanford SVL | BEHAVIOR, OmniGibson, VoxPoser | [Web](https://svl.stanford.edu/) |
 | Stanford ILIAD | ACT, ALOHA, Mobile ALOHA | [Web](https://iliad.stanford.edu/) |
 | Berkeley RAIL | Octo, BridgeData, R3M | [Web](https://rail.eecs.berkeley.edu/) |
-| Berkeley BAIR | RT-X contributions, RoboAgent | [Web](https://bair.berkeley.edu/) Â· [Blog](https://bair.berkeley.edu/blog/) |
+| Berkeley BAIR | RT-X contributions, RoboAgent | [Web](https://bair.berkeley.edu/) · [Blog](https://bair.berkeley.edu/blog/) |
 | CMU Robotics Institute | HomeRobot, OK-Robot | [Web](https://www.ri.cmu.edu/) |
 | MIT CSAIL | LLM planning, manipulation | [Web](https://www.csail.mit.edu/) |
 | NYU CILVR | OPEN TEACH, DynaMo, World Models | [Web](https://wp.nyu.edu/cilvr/) |
@@ -1263,7 +1309,7 @@ A community-focused index for **Physical AI**, built to help researchers, builde
 | Columbia Robotics | Diffusion Policy, CLIPort | [Web](https://robotics.columbia.edu/) |
 | Georgia Tech RIPL | LLM-Robotics survey | [Web](https://sites.gatech.edu/ripl/) |
 | UW RSE Lab | CLIPort, VLAs | [Web](https://rse-lab.cs.washington.edu/) |
-| Toyota Research Institute | Prismatic VLMs, OpenVLA | [Web](https://www.tri.global/) Â· [Blog](https://www.tri.global/news) |
+| Toyota Research Institute | Prismatic VLMs, OpenVLA | [Web](https://www.tri.global/) · [Blog](https://www.tri.global/news) |
 | Tsinghua MARS Lab | LEO, CogACT | [Web](https://group.iiis.tsinghua.edu.cn/~marslab/) |
 | Peking University | NaVid, various VLAs | [Web](https://www.pku.edu.cn/) |
 | Open X-Embodiment | OXE dataset, RT-X | [Web](https://robotics-transformer-x.github.io/) |
@@ -1297,10 +1343,10 @@ If this index helps your research or project work, you can reference the reposit
 
 ```bibtex
 @misc{awesome-physical-ai,
-    title = {Awesome Physical AI},
-    author = {Keon Kim},
+    title = {Physical AI Resource Index},
+    author = {Ruddraksh Dwivedi},
     journal = {GitHub repository},
-    url = {https://github.com/keon/awesome-physical-ai},
+    url = {https://github.com/ruddra-922/Physical-AI-Roadmap},
     year = {2026},
 }
 ```
@@ -1316,4 +1362,5 @@ Contributions are welcome. Open a pull request for relevant additions, correctio
 - Keep additions focused on **Physical AI**, including robotics, embodied agents, world models, and VLAs
 - Place each paper in the single most appropriate category
 - Add paper, project, and code links where available
+- Add short plain-language notes when a resource is especially useful for students
 - Check links before submitting changes
